@@ -74,6 +74,9 @@ if username_input in select_users:
 
 			st.markdown(html_str, unsafe_allow_html=True)
 			st.write("---")
+			st.write("Please fill the following confirmation (if you haven't already) to complete today's task:")
+			st.markdown(f'''<a href='https://forms.gle/N5n3jzJ4bGtG5mcx7'>Link to Confirmation Form </a>''',unsafe_allow_html=True)
+
 			st.write("That's it for today! See you tomorrow :)")
 		else:
 			st.write("This page will be active after 2023-04-17")
