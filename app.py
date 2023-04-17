@@ -18,7 +18,7 @@ st.write(data)
 # username input: TODO - fix lowercase
 username_input = st.text_input('Enter your Twitter username')
 
-df = pd.read_csv('../datasets/ashoka_twitter_more.csv')
+df = pd.read_csv('ashoka_users.csv')
 select_users = list(df['username'])
 
 if username_input in select_users:
