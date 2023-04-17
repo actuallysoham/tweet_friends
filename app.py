@@ -25,7 +25,8 @@ def load_data(filename):
     return data
 
 
-today = date.today()
+#today = date.today()
+today = datetime.strptime('2023-04-18',"%Y-%m-%d").date()
 
 data_1 = load_data('day1')
 data_2 = load_data('day2')
