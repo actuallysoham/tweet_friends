@@ -4,14 +4,25 @@ import pandas as pd
 import numpy as np
 from datetime import date, datetime
 
+# App title
 st.title('Twitter Friend Recommender')
 
+# Add a sidebar
+st.sidebar.header("Guidelines")
+st.sidebar.subheader("Using this portal")
+st.sidebar.write('Enter your Twitter username in the input field (without the @) to receive your recommendations.')
+st.sidebar.write('You are required to follow atleast one of the 5 recommendations every day to continue participation (will be monitored).')
+st.sidebar.write('Day 2 onwards, you will need to fill a very short survey as a part of your daily tasks.')
+
+st.sidebar.subheader("User Study Instructions")
+st.sidebar.write('For full payment, you must complete all the tasks for 7 days, in sequence.')
+
+st.sidebar.subheader("Contact")
+st.sidebar.write('Reach out to Soham (+91 8334866640/ soham.de_asp23@ashoka.edu.in) for any queries')
 
 def load_data(filename):
     data = pd.read_excel('recommendations/'+str(filename)+'.xlsx')
     return data
-
-
 
 
 today = date.today()
@@ -25,22 +36,23 @@ data_6 = load_data('day6')
 data_7 = load_data('day7')
 #st.write(data)
 
-# username input: TODO - fix lowercase
-username_input = st.text_input('Enter your Twitter username')
+# username input: 
+username_input = st.text_input('Enter your Twitter username').lower()
 
 df = pd.read_csv('ashoka_users.csv')
 select_users = list(df['username'])
+select_users = [x.lower() for x in select_users] 
 
 if username_input in select_users:
 	st.write('Congrats, you are part of the study')
 	#reccs = list(data[data['username'] == username_input])
-	reccs_1 = list(data_1.loc[data_1['username'] == username_input].values[0][2:])
-	reccs_2 = list(data_2.loc[data_2['username'] == username_input].values[0][2:])
-	reccs_3 = list(data_3.loc[data_3['username'] == username_input].values[0][2:])
-	reccs_4 = list(data_4.loc[data_4['username'] == username_input].values[0][2:])
-	reccs_5 = list(data_5.loc[data_5['username'] == username_input].values[0][2:])
-	reccs_6 = list(data_6.loc[data_6['username'] == username_input].values[0][2:])
-	reccs_7 = list(data_7.loc[data_7['username'] == username_input].values[0][2:])
+	reccs_1 = list(data_1.loc[data_1['username'].str.lower() == username_input].values[0][2:])
+	reccs_2 = list(data_2.loc[data_2['username'].str.lower() == username_input].values[0][2:])
+	reccs_3 = list(data_3.loc[data_3['username'].str.lower() == username_input].values[0][2:])
+	reccs_4 = list(data_4.loc[data_4['username'].str.lower() == username_input].values[0][2:])
+	reccs_5 = list(data_5.loc[data_5['username'].str.lower() == username_input].values[0][2:])
+	reccs_6 = list(data_6.loc[data_6['username'].str.lower() == username_input].values[0][2:])
+	reccs_7 = list(data_7.loc[data_7['username'].str.lower() == username_input].values[0][2:])
 	#print(reccs)
 	
 
