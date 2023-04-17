@@ -79,7 +79,7 @@ if username_input in select_users:
 
 			st.write("That's it for today! See you tomorrow :)")
 		else:
-			st.write("This page will be active after 2023-04-17")
+			st.write("This page will be active after 2023-04-17.")
 
 	with tab2:
 
