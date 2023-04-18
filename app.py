@@ -26,7 +26,7 @@ def load_data(filename):
 
 
 #today = date.today()
-today = datetime.strptime('2023-04-18',"%Y-%m-%d").date()
+today = datetime.strptime('2023-04-19',"%Y-%m-%d").date()
 
 data_1 = load_data('day1')
 data_2 = load_data('day2')
@@ -125,8 +125,8 @@ if username_input in select_users:
 
 			st.markdown(html_str, unsafe_allow_html=True)
 			st.write("---")
-			st.text("Please fill the survey to complete today's task:")
-			st.markdown(f'''<a href='https://forms.gle/tRUooAD53k35X8Pq8'>Link to Survey (Day 2)</a>''',unsafe_allow_html=True)
+			st.write("That's it for today, see you tomorrow!")
+			#st.markdown(f'''<a href='https://forms.gle/tRUooAD53k35X8Pq8'>Link to Survey (Day 2)</a>''',unsafe_allow_html=True)
 
 		else:
 			st.write("This page will be active on and after 2023-04-19")
