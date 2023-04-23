@@ -230,7 +230,8 @@ if username_input in select_users:
 
 	with tab8:
 		st.header("Post Survey")
-		st.write("The link to the post survey will be shared after completion of all earlier tasks.")
+		st.markdown(f'''<a href='https://forms.gle/ivHkw8CKmzwmqc3Y8'>Link to (final) Post-Survey</a>''',unsafe_allow_html=True)
+		st.write("Thank you for your sustained participation! We will process the payment within 2-3 business days, post verification.")
 
 
 elif len(username_input)>1 and username_input not in select_users:
